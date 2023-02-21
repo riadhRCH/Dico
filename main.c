@@ -7,8 +7,7 @@
 
 int main(int argc, char* argv[]){
     
-    while (1)
-    {
+    
         printf("\n");
         char motPioche[100] = {0};
         int coupsRestants,rep;
@@ -48,15 +47,19 @@ int main(int argc, char* argv[]){
         } while (rep!=1 && rep !=2 && rep!=3 && rep!=4);
 
         if (rep==3) {
+            printf("\t  ecrire un mot : ");
+            char mot[50];
+            scanf("%s",mot);
             fptr = fopen("dico.txt", "a");   
-            fputs("riadh\n", fptr);
+            fputs(mot, fptr);
+            fputs("\n", fptr);
             fclose(fptr);
-            continue;
+            return 0;
         }
 
         if (rep==4) {
             fclose(fopen("dico.txt", "w"));   
-            continue;
+            return 0;
         }
 
         system("setterm -bold on");
@@ -140,6 +143,6 @@ int main(int argc, char* argv[]){
         printf("Sous la forme d'une arbre : \n");
         print_ascii_tree(dico);
         arbreSuppr(&dico);
-        //return 0;
-    }
+        return 0;
+    
 }

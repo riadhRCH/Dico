@@ -113,12 +113,12 @@ int main(int argc, char* argv[]){
     system("setterm -bold on");
     printf("Le nb de mot diff ");
     system("setterm -bold off");
-    printf("|            %d       |\n",dicoNbMotsDifferents(dico));
+    printf("|            %d        |\n",dicoNbMotsDifferents(dico));
     printf("\t | ");
     system("setterm -bold on");
     printf("Le nb de mot tot  ");
     system("setterm -bold off");
-    printf("|            %d       |\n",dicoNbMotsTotal(dico));
+    printf("|            %d        |\n",dicoNbMotsTotal(dico));
     printf("\t ¤-------------------¤---------------------¤\n");
     printf("\n");
     system("setterm -bold on");

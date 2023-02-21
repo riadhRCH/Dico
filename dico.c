@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-
 #include "dico.h"
 #include "arbre.h"
 
@@ -351,13 +350,13 @@ void print_level(asciinode *node, int x, int level)
             printf(" ");
         }
         print_next += i;
-        printf("\033[107m");
-        system("setterm -bold on");
-        printf("\033[1;31m");
+        //printf("\033[107m");
+        //system("setterm -bold on");
+        //printf("\033[1;31m");
         printf("%s", node->label);
-        printf("\033[0;37m");
-        system("setterm -bold off");
-        printf("\033[0m");
+        //printf("\033[0;37m");
+        //system("setterm -bold off");
+        //printf("\033[0m");
         print_next += node->lablen;
     }
     else if (node->edge_length >= level)
@@ -383,6 +382,7 @@ void print_level(asciinode *node, int x, int level)
             print_next++;
         }
     }
+
     else
     {
         print_level(node->gauche,
@@ -605,7 +605,7 @@ void print_ascii_tree(TArbre *t)
     free_ascii_tree(proot);
 }
 
-/* ******************************************** Mgaaa7ef Insert******************************************************** */
+/* ******************************************** ******************************************************** */
 
 void dicoNbOccSim(char *mot, TArbre **a)
 {
@@ -671,8 +671,8 @@ void print_levelInsert(asciinode *node, int x, int level, char *mot)
         char copyMot[11];
         copyMot[0] = mot[0];
        // printf("!!!! nbOcc Node= %d \n",node->nbOcc);
-        printf("\033[107m");
-        system("setterm -bold on");
+       // printf("\033[107m");
+       // system("setterm -bold on");
         if ((node->label != "~") && (node->nbOcc != 0))
         {
             printf("\033[1;31m"); //red
@@ -685,8 +685,8 @@ void print_levelInsert(asciinode *node, int x, int level, char *mot)
             mot = mot + 1;
         }
         printf("%s", node->label);
-        printf("\033[0;37m");
-        system("setterm -bold off");
+      //printf("\033[0;37m");
+       //system("setterm -bold off");
         printf("\033[0m");
         print_next += node->lablen;
     }
@@ -806,5 +806,4 @@ void print_ascii_treeInsert(TArbre *t, char *mot)
                100);
     }
     free_ascii_tree(proot);
-
 }

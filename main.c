@@ -4,8 +4,24 @@
 #include "dico.h"
 #include "arbre.h"
 #include <time.h>
+#include "colors.h"
 
 int main(int argc, char* argv[]){
+
+     
+    FILE * fPtr;
+    char ch;
+    printf(CYAN"\t\t ----------------------------------------------\n \n"WHITE);
+    fPtr = fopen("./file.logo", "r");
+    do 
+    {
+        ch = fgetc(fPtr);
+        putchar(ch);
+        
+    } while(ch != EOF); 
+    fclose(fPtr);
+    printf("\n");
+    printf(CYAN"\t\t ----------------------------------------------\n \n");
     printf("\n");
     char motPioche[100] = {0};
     int coupsRestants,rep;
@@ -13,27 +29,15 @@ int main(int argc, char* argv[]){
     char *buffer = NULL;
     TArbre* dico=NULL;
     TArbre* dicoCopy=NULL;
-    //printf("\t -------------------------------------------\n");
-    printf("\t ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\n");
-    printf("\t ¤                                        ¤\n");
-    system("setterm -bold on");
-    printf("\t ¤    Bienvenue dans Notre Dictionnaire ¤\n");
-    system("setterm -bold off");
-    printf("\t ¤                                        ¤\n");
-    printf("\t ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\n");
-    //printf("\t -------------------------------------------\n");
-    //printf("\t | |                                     | |\n");
-    //printf("\t | --------------------------------------- |\n");
-    //printf("\t -------------------------------------------\n");
     
     do
     {
         printf("\n \n");
         system("setterm -bold on");
-        printf("\t ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ Menu ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\n \n");
-        printf("\t      1- Consulter la simulation            \n");
-        printf("\t      2- Consulter le dictionnaire          \n \n");
-        printf("\t ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\n \n");
+        printf(GREEN "\t\t ---------------- Menu --------------------\n \n");
+        printf(CYAN "\t\t      1- Consulter la simulation            \n");
+        printf(CYAN "\t\t     2- Consulter le dictionnaire          \n \n");
+        printf(GREEN "\t\t ------------------------------------------\n \n");
         system("setterm -bold off");
         system("setterm -bold on");
         printf("\t  Option : ");

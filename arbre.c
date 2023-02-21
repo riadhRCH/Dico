@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-
 #include "arbre.h"
 
 /**
@@ -14,16 +13,19 @@ TArbre* arbreConsVide(){
     empty = (TArbre*) malloc(sizeof(TArbre));
     return empty;
 }
+
 /**
  * Verifier si l'arbre est vide
  * @param TArbre *a
  * @return int 
  */
+
 int arbreEstVide(TArbre* a){
     if(a == arbreConsVide())
         return 1;
     return 0;
 }
+
 /**
  * Créer une arbre 
  * @param char c
